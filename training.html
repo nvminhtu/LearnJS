@@ -7,10 +7,46 @@
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/training.js"></script>
   <script>
+  $(document).ready(function() {
+    $('.tab_nav li:first').addClass('active').show();
+    $('.content').hide();
+    $('.content:first').show();
+    $('.tab_nav li').click(function(event) {
+      $('.tab_nav li').removeClass('active');
+      $(this).addClass('active');
+    });
+  });
     
   </script>
+  <style>
+    .active { color:#f0f0f0;}
+  </style>
 </head>
 <body>
-  <span data-sku="SKU123456">My products</span>
+  <!-- <span data-sku="SKU123456">My products</span> -->
+  <div id="tabs">
+    <ul class="tab_nav">
+      <li><a href="#tab1">Tab 1</a></li>
+      <li><a href="#tab2">Tab 2</a></li>
+      <li><a href="#tab3">Tab 3</a></li>
+      <li><a href="#tab4">Tab 4</a></li>
+    </ul>
+    <div class="tab_content">
+      <div id="tab1" class="content">
+        <p>Content of tab 1 Sheetrock : jQuery plugin for display Google Spreadsheet Data</p>
+      <!-- /#tab1.content --></div>
+      <div id="tab2" class="content">
+        <p>Content of tab 2 Sheetrock : jQuery plugin for display Google Spreadsheet Data</p>
+      <!-- /#tab2.content --></div>
+      <div id="tab3" class="content">
+        <p>Content of tab 2 popconfirm : jQuery Bootstrap Popover Confirmation Plugin</p>
+      <!-- /#tab3.content --></div>
+      <div id="tab4" class="content">
+        <p>Content of tab 3 popconfirm : jQuery Bootstrap Popover Confirmation Plugin</p>
+      <!-- /#tab4.content --></div>
+    <!-- /.tab_content --></div>
+  <!-- /#tabs --></div>
 </body>
 </html>
+
+
