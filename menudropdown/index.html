@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    $('.dropdown_mn > li').bind('mouseover',openSubmenu);
+    $('.dropdown_mn > li').bind('mouseout', closeSubmenu);
+
+    function openSubmenu(){
+      $(this).find('ul').css('visibility','visible');
+    }
+    function closeSubmenu(){
+      $(this).find('ul').css('visibility','hidden');
+    }
+  });
+    
+  </script>
+  <style>
+    .dropdown_mn{
+      margin:0;
+      padding:0;
+    }
+    .dropdown_mn li{
+      list-style: none;
+      float:left;
+      font:12px Arial, sans-serif #111;
+    }
+    .dropdown_mn li a:link, .dropdown_mn li a:visited{
+      display: block;
+      text-decoration: none;
+      background-color: #09F;
+      padding: 0.5em 2em;
+      margin:0;
+      border-right: 1px solid #fff;
+      color:#111;
+    }
+    .dropdown_mn li a:hover{
+      background: #0CF;
+    }
+    /*sub menu*/
+    .dropdown_mn li ul{
+      position: absolute;
+      visibility: hidden;
+      border-top:1px solid #fff;
+      margin:0;
+      padding:0;
+    }
+    .dropdown_mn li ul li{
+      display: inline;
+      float:none;
+    }
+    .dropdown_mn li ul li a:link , .dropdown_mn li ul li a:visited{
+      background-color: #09F;
+      width: auto;
+    }
+    .dropdown_mn li ul li a:hover{
+      background:#0CF;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="navigation">
+      <ul class="dropdown_mn">
+        <li>
+           <a href="#">Menu 1</a>
+        </li>
+        <li><a href="#">Menu 2</a>
+            <ul>
+              <li><a href="#">Menu 1</a></li>
+              <li><a href="#">Menu 2</a></li>
+              <li><a href="#">Menu 3</a></li>
+              <li><a href="#">Menu 4</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Menu 3</a></li>
+        <li><a href="#">Menu 4</a></li>
+        <li><a href="#">Menu 5</a></li>
+      </ul>
+  <!-- /.navigation --></div>
+</body>
+</html>
+
+
